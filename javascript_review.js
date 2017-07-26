@@ -3,7 +3,6 @@
 // write a function that takes in three parameters and returns the sum of those three parameters
 function sum (a,b,c) {
 return a + b + c;
-console.log(sum);
 }
 
 sum(1,2,3)
@@ -61,25 +60,21 @@ thing(['one', 'two', 'three'], ['thing', 'fingers', 'little bears']);
 // that contains keys and values, and returns a different object that contains two keys. The first key
 // should be named "keys" and will have the first array as a value. The second key should be named
 // "values" and will have the second array as a value.
-function name (object) {
-	var user = {
-		fName:"Yero",
-		lName:"Pharaoh"
-	};
+function objectToArray (object) {
+    
+    var array1 = [];
+    var array2 = [];
+    for (var keys in object) {
+        array1.push(keys);
+        array2.push(object[keys]);    
+    }
 
-	var array1 = [];
-	var array2 = [];
-
-	for(var keys in user){
-		array1.push(keys);
-		array2.push(user[keys]);
-	}
-
-	var diffObject = {
-	    keys: array1,
-	    values: array2
-	 	}
-	    console.log(diffObject);
+    var objectArray = {
+        keys: array1,
+        values: array2,
+    }
+    console.log(objectArray);
 }
 
-name({});
+objectToArray({ exciting: "markets", exotic: "britain" });
+objectToArray({ fname: "Yero", lname: "Pharaoh", age: 27});
